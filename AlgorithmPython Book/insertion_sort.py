@@ -1,5 +1,6 @@
 def solution(parameter):
-    return insertion_sort(parameter)
+    return insertion_sort_whileloop(parameter)
+    # return insertion_sort_forloop(parameter)
 
 
 # def insertion_sort(array):
@@ -24,17 +25,30 @@ def solution(parameter):
 #             insert_element -= 1
 #             continue
 #         temp[i], temp[i+1] = array[j+1], array[j]
+# Implementation using While Loop
+def insertion_sort_whileloop(parameter):
+    for i in range(1, len(parameter)):
+        current_value = parameter[i]
+        current_position = i
+        while current_position > 0 and parameter[current_position - 1] > current_value:
+            parameter[current_position] = parameter[current_position - 1]
+            current_position -= 1
+        parameter[current_position] = current_value
+    return parameter
 
-def insertion_sort(a_list):
-    for i in range(1, len(a_list)):
-        current_value = a_list[i]
-        insertion_position = i
-        while insertion_position > 0 and a_list[insertion_position - 1] > current_value:
-            a_list[insertion_position] = a_list[insertion_position - 1]
-            insertion_position -= 1
-        a_list[insertion_position] = current_value
-    return a_list
+
+# Implementation using For Loop
+def insertion_sort_forloop(parameter):
+    for i in range(1, len(parameter)):
+        current_value = parameter[i]
+        current_position = i
+        for i in range(i):
+            if current_position > 0 and parameter[current_position - 1] > current_value:
+                parameter[current_position] = parameter[current_position - 1]
+                current_position -= 1
+        parameter[current_position] = current_value
+    return parameter
 
 
-print(solution([7, 2, 4, 1, 98, 0, 121]))
-print(solution([54, 26, 93, 17, 77, 31, 44, 55, 20]))
+# print(solution([7, 2, 4, 1, 98, 0, 121]))
+print(solution([54, 26, 93, 17, 77, 31, 44, 55, 20, 1]))
