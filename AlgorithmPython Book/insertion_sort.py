@@ -1,6 +1,6 @@
 def solution(parameter):
-    return insertion_sort_whileloop(parameter)
-    # return insertion_sort_forloop(parameter)
+    # return insertion_sort_whileloop(parameter)
+    return insertion_sort_forloop(parameter)
 
 
 # def insertion_sort(array):
@@ -50,5 +50,7 @@ def insertion_sort_forloop(parameter):
     return parameter
 
 
-# print(solution([7, 2, 4, 1, 98, 0, 121]))
-print(solution([54, 26, 93, 17, 77, 31, 44, 55, 20, 1]))
+
+print(solution([7, 2, 4, 1, 98, 0, 121]))
+# print(solution([54, 26, 93, 17, 77, 31, 44, 55, 20, 1]))
+1
