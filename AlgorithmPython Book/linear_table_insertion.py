@@ -3,7 +3,7 @@ def solution(parameter, value, position):
 
 
 def linear_table_insertion(parameter, value, position):
-    if position > len(parameter): return f'Please you Insertion Position is above the threshold'
+    if position > len(parameter): return f'Please your Insertion Position is above the Threshold, \nPlease try a lower number'
     temp = [0 for i in range(len(parameter) + 1)]
     for i in range(len(parameter)):
         if i < position-1:

@@ -1,6 +1,6 @@
-def solution(parameter):
+def solution(parameter, order):
     # return insertion_sort_whileloop(parameter)
-    return insertion_sort_forloop(parameter)
+    return insertion_sort_forloop(parameter, order)
 
 
 # def insertion_sort(array):
@@ -38,19 +38,28 @@ def insertion_sort_whileloop(parameter):
 
 
 # Implementation using For Loop
-def insertion_sort_forloop(parameter):
-    for i in range(1, len(parameter)):
-        current_value = parameter[i]
-        current_position = i
-        for i in range(i):
-            if current_position > 0 and parameter[current_position - 1] > current_value:
-                parameter[current_position] = parameter[current_position - 1]
-                current_position -= 1
-        parameter[current_position] = current_value
-    return parameter
+def insertion_sort_forloop(parameter, order=True):
+    if order:
+        for i in range(1, len(parameter)):
+            current_value = parameter[i]
+            current_position = i
+            for j in range(i):
+                if current_position > 0 and parameter[current_position - 1] < current_value:
+                    parameter[current_position] = parameter[current_position - 1]
+                    current_position -= 1
+            parameter[current_position] = current_value
+        return parameter
+    else:
+        for i in range(1, len(parameter)):
+            current_value = parameter[i]
+            current_position = i
+            for j in range(i):
+                if current_position > 0 and parameter[current_position - 1] > current_value:
+                    parameter[current_position] = parameter[current_position - 1]
+                    current_position -= 1
+            parameter[current_position] = current_value
+        return parameter
 
 
-
-print(solution([7, 2, 4, 1, 98, 0, 121]))
+print(solution([7, 2, 4, 1, 98, 0, 121], False))
 # print(solution([54, 26, 93, 17, 77, 31, 44, 55, 20, 1]))
-1
