@@ -6,11 +6,11 @@ def linear_table_insertion(parameter, value, position):
     if position > len(parameter): return f'Please your Insertion Position is above the Threshold, \nPlease try a lower number'
     temp = [0 for i in range(len(parameter) + 1)]
     for i in range(len(parameter)):
-        if i < position-1:
+        if i < position:
             temp[i] = parameter[i]
         else:
             temp[i+1] = parameter[i]
-    temp[position-1] = value
+    temp[position] = value
     return temp
 
 
