@@ -3,13 +3,22 @@ def solution(parameter, value):
 
 
 def dichotomy_binary_search(parameter, value):
-    middle_term, count = (len(parameter) - 1) // 2, (len(parameter) - 1) // 2
+    first_term, last_term = 0, len(parameter)-1
+    middle_term = (first_term + last_term) // 2
+    count = middle_term
     while parameter[middle_term] != value and count != 0:
-        count -= 1
-        if middle_term > value:
-            middle_term = (middle_term + len(parameter)-1)//2
+        if count != 0:
+            count -= 1
+            if parameter[middle_term] > value:
+                last_term = middle_term
+                middle_term = (first_term + last_term) // 2
+            else:
+                first_term = middle_term
+                middle_term = (first_term + last_term) // 2
         else:
-            middle_term = (middle_term - 1) // 2
+            # value == parameter[middle_term]:
+            return f'Value found at index {middle_term}'
+    return f'Value not found'
 
 
 print(solution([0, 1, 2, 4, 6, 7, 9, 11, 55, 98, 121], 6))
