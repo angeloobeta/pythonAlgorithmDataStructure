@@ -1,7 +1,7 @@
 from timeit import timeit
 
-func = '''
-def colletz_conjecture(e,f):
+
+def collatz_conjecture(e, f):
     maximum_number, d_number = 0, 0
     for i in range(e, f):
         count = 0
@@ -20,12 +20,10 @@ def colletz_conjecture(e,f):
             maximum_number = count
             d_number = i
     return f'The maximum count for {maximum_number} is {d_number}'
-'''
 
+
+print(collatz_conjecture(2, 1000000))
 "The maximum count for 524 is 837799"
-
-t = timeit("colletz_conjecture(2,1000000)", setup=func)
-print(t)
 
 fun = '''
 def custom_power(x, y):
