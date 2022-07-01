@@ -19,12 +19,14 @@ def collatz_conjecture(e, f):
             # print(f'The maximum number is {maximum_number}')
             maximum_number = count
             d_number = i
-    return f'The maximum count for {maximum_number} is {d_number}'
+    return f"{d_number} has {maximum_number} counts for {f} numbers"
 
 
-print(collatz_conjecture(2, 1000000))
-"The maximum count for 524 is 837799"
-
+# print(collatz_conjecture(2, 10000000))
+# print(collatz_conjecture(2, 1000000000))
+"The maximum count for 1000000 number is 524 with  counts"
+"837799 has 524 counts for 1,000,000 numbers"
+"8400511 has 685 counts for 10,000,000 numbers"
 fun = '''
 def custom_power(x, y):
     result = 1
